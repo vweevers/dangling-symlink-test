@@ -3,7 +3,7 @@ var test   = require('tape')
   , fs     = require('fs')
   , tmpDir = path.join(__dirname, 'tmp')
   , mkdirp = require('mkdirp')
-  , rimraf = require('rimraf')
+  // , rimraf = require('rimraf')
   , after  = require('after')
 
 test('relative symlink', function(t){
@@ -19,7 +19,8 @@ test('relative symlink', function(t){
       if (err) console.log(err)
       
       t.ok(fs.existsSync(path.join(link, 'b')))
-      rimraf(tmpDir, t.end)
+      t.end()
+      // rimraf(tmpDir, t.end)
     })
   })
 
